@@ -1,0 +1,6 @@
+graph Test {
+b -- c [label= 0] 
+a -- b [label= 1] 
+a -- c [label= 2] 
+b -- d [label= 3] 
+}
