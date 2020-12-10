@@ -25,6 +25,7 @@ int main(void){
   int flag=1;
   if(checkFile()){
     while (flag){
+      printf("Verts %d  Nodes %d",NumV,NumN);
       int** Arr =(int**)malloc(NumV*(sizeof(int*)));// массив содержащий матрицу
       for (int i = 0; i < NumV; i++)
         Arr[i]=(int*)malloc(NumN*(sizeof(int)));
@@ -57,7 +58,7 @@ int main(void){
           break;
         
         case 4:;
-          int** Verts=(int**)malloc(NumV*sizeof(int));
+          int** Verts=(int**)malloc(NumV*sizeof(int*));
           for (int i = 0; i < NumV; i++)
           Verts[i]=(int*)malloc(2*sizeof(int));
           vertGrade(Arr,Verts);
@@ -218,8 +219,8 @@ void seeGraph(int** connect,int* nodeNames){
   void vertGrade(int** arr, int** verts){
     for (int i = 0; i < NumV; i++)
       for(int j=0;j<NumN; j++){
-        if (arr[i][j]==1)
-        {
+        //verts[i][1]=0;
+        if (arr[i][j]==1){
           verts[i][1]++;
           verts[i][0]='a'+i;
         }
